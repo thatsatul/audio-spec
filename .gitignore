@@ -47,3 +47,5 @@ coverage/
 # apps/server/assets/*.mp3
 # apps/server/assets/*.wav
 # apps/server/assets/*.m4a 
+
+uploads/
