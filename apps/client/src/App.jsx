@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react'
 import AudioRecorder from './components/AudioRecorder'
+import VideoAndAudioSeparate from './components/VideoAndAudioSeparate/VideoAndAudioSeparate'
 
 function App() {
   const [currentRoute, setCurrentRoute] = useState('home')
@@ -7,7 +8,9 @@ function App() {
   const renderContent = () => {
     switch (currentRoute) {
       case 'audiorecorder':
-        return <AudioRecorder />
+        return <AudioRecorder />;
+      case 'videoandaudios':
+        return <VideoAndAudioSeparate />;
       default:
         return (
           <div className="home-content">
@@ -33,6 +36,12 @@ function App() {
             className={`nav-btn ${currentRoute === 'audiorecorder' ? 'active' : ''}`}
           >
             Audio Recorder
+          </button>
+          <button 
+            onClick={() => setCurrentRoute('videoandaudios')}
+            className={`nav-btn ${currentRoute === 'videoandaudios' ? 'active' : ''}`}
+          >
+            Video and Audio
           </button>
         </nav>
       </header>
